@@ -1,0 +1,105 @@
+.main-conatiner{
+        display: grid;
+        grid-template-columns: 250px 1fr; /* Left fixed, right flexible */
+        height: 100vh; /* Full screen height */
+}
+.left-sidebar{
+        border-right: 1px solid #ccc; /* Divider */
+        display: grid;
+        grid-template-rows: auto 1fr;
+        height: 100%;
+        padding: 0 8px
+}
+
+.left-sidebar h1{
+    background-color: #fff;
+    height: 100%;
+}
+.left-footer{
+    display: grid;
+    gap: 10px;
+    align-content: center;
+}
+
+.left-footer .user-details-btn{
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    
+}
+.left-footer .project-details-btn{
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+}
+
+
+.img-container{
+    width: 200px;
+    height: 100px;
+}
+.img-container img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/*  Right side  */
+
+.bg-right-sidebar{
+    background: -webkit-linear-gradient(90deg, rgb(81, 64, 254) 0%, rgb(119, 87, 247) 56%, rgb(157, 110, 240) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-sidebar{
+    width: 100%;
+    height: 100%;
+}
+
+.header{
+    width: 100%;
+    padding: .7rem .9rem;
+}
+.header h2{
+    color: #fff023;
+    font-weight: bold;
+}
+
+.right-sidebar-content{
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    gap: 20px;
+    padding: 15px;
+}
+
+.card{
+    background-color: #fff023;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+    text-align: center;
+    height: 150px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.card .value{
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
