@@ -23,17 +23,40 @@
 
             <div class="left-footer">
                 <div id="user-details-btn">
-                    <button class="btn btn-success">User Details</button>
+                    <button class="animated-button">
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" ></path>
+                        </svg>
+                        <span class="text">Center Details</span>
+                        <span class="circle"></span>
+                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" ></path>
+                        </svg>
+                    </button>
                 </div>
+
                 <div id="project-details-btn">
-                    <button>Project Details</button>
+                    <button class="animated-button" onclick="project1.html">
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" ></path>
+                        </svg>
+                        <span class="text">Project Details</span>
+                        <span class="circle"></span>
+                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" ></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
+        <!-- ========= Left Sidebar End Here ========= -->
 
 
-        <!-- Details Container -->
+        <!-- Details Container // Right side-->
         <div class="bg-right-sidebar">
+
             <div class="right-sidebar">
                 <!-- Header -->
                 <header class="header">
@@ -41,84 +64,92 @@
                 </header> 
 
                 <!-- information content -->
-                 <section class="right-sidebar-content">
+                <div class="right-sidebar-content">
 
-                    <div class="card">
-                        <h3 style="display: flex; gap: 5px;">
+                    <!-- Card 1.-->
+                    <div class="info-card" data-title="Address">
+                        <h3 class="info-card-title">
                             <i class="fa-solid fa-location-dot"></i>
                             Address
                         </h3>
                         <p class="value">123 Main Street, New Delhi, India.</p>
                     </div>
-
-                    <div class="card">
-                        <h3>
+                    <!-- card 2. -->
+                    <div class="info-card" data-title="Phone no.">
+                        <h3 class="info-card-title" >
                             <i class="fa-solid fa-phone"></i>
                             Phone no.
                         </h3>
                         <p class="value">+91 9876543210</p>
                     </div>
-
-                    <div class="card">
-                        <h3>
+                    <!-- card 3. -->
+                    <div class="info-card" data-title="Authorized Contact Person">
+                        <h3 class="info-card-title" >
                             <i class="fa-solid fa-user-check"></i>
                             Authorized Contact Person
                         </h3>
                         <p class="value">John Doe</p>
                     </div>
-
-                    <div class="card">
-                        <h3>
+                    <!-- card 4. -->
+                    <div class="info-card" data-title="Email">
+                        <h3 class="info-card-title" >
                             <i class="fa-solid fa-envelope"></i>
                             Email ID
                         </h3>
-                        <p class="value">john.doe@example.com</p>
+                        <p class="value">johndoeexample.com</p>
                     </div>
-
-                    <div class="card">
-                        <h3>
+                    <!-- card 5.  -->
+                    <div class="info-card" data-title="Aadhar Card">
+                        <h3 class="info-card-title" >
                             <i class="fa-solid fa-id-card"></i>
                             Director’s Aadhar Card
                         </h3>
                         <p class="value">2738 9870 1235</p>
                     </div>
-
-                    <div class="card">
-                        <h3>
+                    <!-- card 6. -->
+                    <div class="info-card" data-title="Pan Card">
+                        <h3 class="info-card-title" >
                             <i class="fa-solid fa-id-card"></i>
                             Pan Cad 
                             </h3>
                         <p class="value">HR67304224</p>
                     </div>
-
-                    <div class="card">
-                        <h3>
+                    <!-- card 7. -->
+                    <div class="info-card" data-title="Comnpany GST">
+                        <h3 class="info-card-title" >
                             <i class="fa-regular fa-building"></i>
                             Comnpany GST
                         </h3>
                         <p class="value">22AAAAA0000A1Z5</p>
                     </div>
-
-                    <div class="card">
-                        <h3>
+                    <!-- card 8. -->
+                    <div class="info-card" data-title="Bank Details">
+                        <h3 class="info-card-title" >
                             <i class="fa-solid fa-building-columns"></i>
                             Company Bank Account
                         </h3>
                         <p class="value">
-                            <span>Account Name: ABC Pvt Ltd</span> 
-                            <span>Account Number: 1234567890</span> 
+                            <span>Account Name: ABC Pvt Ltd</span> <br> 
+                            <span>Account Number: 1234567890</span> <br>
                             <span>IFSC: HDFC0001234</span>
                         </p>
                     </div>
 
-                 </section>
+                </div>
             </div>
+
+        <!-- Download Buttons -->
+        <div class="download-buttons" style="border: 2px solid black;">
+            <a href="" id="company-bank-details"></a>
+            <a href="" id="company-gst"></a>
+            <a href=""></a>
+            <a href=""></a>
         </div>
 
-         </div>
+        </div>
+        <!-- ========= Right Sidebar End Here ========= -->
+
+
     </div>
 </body>
 </html>
-<script>
-
-</script>
