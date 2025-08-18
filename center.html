@@ -17,7 +17,7 @@
         <!-- Left Sidebar -->
         <div class="left-sidebar">
             <div class="img-container">
-                <img src="/img/yello.png" alt="Company img">
+                <img src="/Global Projects/img/yello.png" alt="Company img" id="company-logo">
                 <p>Center Details</p>
             </div>
 
@@ -55,6 +55,7 @@
         <!-- ========= Left Sidebar End Here ========= -->
 
 
+        <!-- Right Side Content -->
         <div class="bg-right-sidebar">
 
             <div class="page-header">
@@ -63,7 +64,7 @@
                     <h2>Profile Information <span class="dot">.</span></h2>
                 </header> 
             </div>    
-                <!-- Cards Container -->
+
                 <div class="cards">
 
                     <!-- Address.-->
@@ -96,23 +97,15 @@
                             <i class="fa-solid fa-envelope"></i>
                             Email ID
                         </h3>
-                        <p class="value">johndoeexample.com</p>
+                        <p class="value">johndoe@example.com</p>
                     </div>
-                    <!-- Aadhar card.  -->
-                    <div class="info-card" data-title="Aadhar Card">
+                    <!-- Director Aadhar And pan Details  -->
+                    <div class="info-card no-hover" id="directors-card">
                         <h3 class="info-card-title" >
                             <i class="fa-solid fa-id-card"></i>
-                            Director’s Aadhar Card
+                            Director’s Aadhar & PAN
                         </h3>
-                        <p class="value">2738 9870 1235</p>
-                    </div>
-                    <!-- Pan. -->
-                    <div class="info-card" data-title="Pan Card">
-                        <h3 class="info-card-title" >
-                            <i class="fa-solid fa-id-card"></i>
-                            Pan Cad 
-                            </h3>
-                        <p class="value">HR67304224</p>
+                        <p style="color: #C9CDCF; ">click to view details <i class="fa-solid fa-angle-right expand-arrow"></i></p>
                     </div>
                     <!-- Company gst. -->
                     <div class="info-card" data-title="Comnpany GST">
@@ -140,19 +133,77 @@
 
         <!-- Download Buttons -->
             <div class="download-buttons" >
-                <a href="/" id="download-btn-1">
+                <a href="#" id="download-btn-1" class="download-btn">
+                    <i class="fa-regular fa-file-pdf"></i>
                     <span>Download button</span>
                 </a>
-                <a href="/" id="download-btn-2">
+                <a href="#" id="download-btn-2" class="download-btn">
+                    <i class="fa-regular fa-file-pdf"></i>
                     <span>Download button</span>
                 </a>
-                <a href="/" id="download-btn-3">
+                <a href="#" id="download-btn-3" class="download-btn">
+                    <i class="fa-regular fa-file-pdf"></i>
                     <span> Download button </span>
                 </a>
             </div>    
 
         </div>
         <!-- ========== Right Sidebar Content End Here ======== -->
+
+        <!-- Directors Modal -->
+<div class="modal" id="directors-modal">
+  <div class="modal-content">
+    <span class="close-btn" id="close-modal">&times;</span>
+    <h2>Directors Aadhar & PAN Details</h2>
+    <div class="modal-body">
+      <h4>Director 1</h4>
+      <p><strong>Aadhar:</strong> 2738 9870 1235</p>
+      <p><strong>PAN:</strong> HR67304224</p>
+      <hr>
+      <h4>Director 2</h4>
+      <p><strong>Aadhar:</strong> 5678 2345 6789</p>
+      <p><strong>PAN:</strong> ABCDP1234F</p>
+      <hr>
+      <h4>Director 3</h4>
+      <p><strong>Aadhar:</strong> 9876 5432 1098</p>
+      <p><strong>PAN:</strong> PQRSX5678Z</p>
+    </div>
+  </div>
+</div>
+
 </div>
 </body>
 </html>
+
+<script>
+    const project_btn = document.querySelector('#project-details-btn');
+    const company_logo = document.querySelector('#company-logo');
+
+    project_btn.addEventListener('click', () => {
+        window.location.href = 'project.html';
+    })
+    company_logo.addEventListener('click', () =>{
+        window.location.href = 'index.html';
+    })
+
+  const directorsCard = document.getElementById("directors-card");
+  const directorsModal = document.getElementById("directors-modal");
+  const closeModalBtn = document.getElementById("close-modal");
+
+  directorsCard.addEventListener("click", () => {
+    directorsModal.style.display = "flex";
+  });
+
+  closeModalBtn.addEventListener("click", () => {
+    directorsModal.style.display = "none";
+  });
+
+  // Close modal if clicked outside content
+  window.addEventListener("click", (e) => {
+    if (e.target === directorsModal) {
+      directorsModal.style.display = "none";
+    }
+  });
+</script>
+
+
