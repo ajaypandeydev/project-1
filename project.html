@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>center</title>
+    <link rel="stylesheet" href="project.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+
+</head>
+<body>
+    <div class="main-conatiner">
+
+        <!-- Left Sidebar -->
+        <div class="left-sidebar">
+            <div class="img-container">
+                <img src="img/yello.png" alt="Company img" id="company-logo">
+                <p>Project Details</p>
+            </div>
+
+            <!-- Nav Button -->
+            <div class="sidebar-footer">
+                <div id="user-details-btn">
+                    <button class="animated-button">
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" ></path>
+                        </svg>
+                        <span class="text">Center Details</span>
+                        <span class="circle"></span>
+                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" ></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div id="project-details-btn">
+                    <button class="animated-button">
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" ></path>
+                        </svg>
+                        <span class="text">Project Details</span>
+                        <span class="circle"></span>
+                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" ></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- ========= Left Sidebar End Here ========= -->
+
+
+        <div class="bg-right-sidebar">
+
+            <div class="page-header">
+                <!-- Header -->
+                <header class="header">
+                    <h2>Project Details<span class="dot">.</span></h2>
+                </header> 
+            </div>    
+                <!-- Cards Container -->
+                <div class="cards">
+
+                    <!-- project code.-->
+                    <div class="info-card">
+                        <h3 class="info-card-title">
+                            <i class="fa-solid fa-lock"></i>
+                            Project Code
+                        </h3>
+                        <span class="value">ABCD</span>
+                    </div>
+                    <!-- Project type. -->
+                    <div class="info-card">
+                        <h3 class="info-card-title" >
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Project Type
+                        </h3>
+                        <p class="value">
+                            <select class="dropdown">
+                            <option value="dropdown-box">Inbound</option>
+                            <option value="dropdown-box">Outbound</option>
+                            <option value="dropdown-box">Chat</option>
+                            <option value="dropdown-box">Lead Generation</option>
+                            </select>
+                        </p>
+                    </div>
+                    <!-- Project approval date. -->
+                    <div class="info-card">
+                        <div class="icon-heading" style="cursor:pointer;" onclick="toggleDatePicker('approval-datetime')">
+                           <h3 class="info-card-title" >
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Project Approval Date
+                           </h3>
+                            <input type="date" id="myDate" name="event-date"/>
+                        </div>
+                        <input type="datetime-local" id="approval-datetime" class="datetime-input" style="display:none;" onchange="showDate(this, 'display-approval-date')">
+                        <div id="display-approval-date" class="display-date"></div>
+                    </div>
+
+                    <!-- project nda. -->
+                    <div class="info-card">
+                        <div class="icon-heading" style="cursor:pointer;" onclick="toggleDatePicker('nda-datetime')">
+                        <h3 class="info-card-title" >
+                            <i class="fa-solid fa-calendar-check"></i>
+                          Project NDA Date
+                        </h3>
+                         <input type="date" id="myDate" name="event-date"/>
+                      </div>
+                    <input type="datetime-local" id="nda-datetime" class="datetime-input" style="display:none;" onchange="showDate(this, 'display-nda-date')"/>
+                    <div id="display-nda-date" class="display-date"></div>
+                    </div>
+
+                    <!-- Center Visit Date.  -->
+                    <div class="info-card">
+                         <div class="icon-heading" style="cursor:pointer;" onclick="toggleDatePicker('center-visit-date')">
+                             <h3 class="info-card-title" >
+                            <i class="fa-solid fa-calendar-plus"></i>
+                            Center Visit Date
+                            </h3>
+                             <input type="date" id="myDate" name="event-date"/>
+                            </div>
+                    <input type="date" id="center-visit-date" style="display:none;" onchange="showDate(this, 'display-center-visit')"/>
+                    <div id="display-center-visit" class="display-date"></div>
+                    </div>
+
+                    <!-- SLA Data. -->
+                    <div class="info-card">
+                        <h3 class="info-card-title" >
+                           <i class="fa-solid fa-calendar-plus"></i>
+                            SLA Data
+                            </h3>
+                        <p class="value"></p>
+                    </div>
+
+                    <!-- Software installation and status. -->
+                    <div class="info-card">
+                         <div class="icon-heading" style="cursor:pointer;" onclick="toggleDatePicker('Software-install-date')">
+                             <h3 class="info-card-title" >
+                            <i class="fa-solid fa-calendar-plus"></i>
+                            Software Installation Date and status
+                            </h3>
+                             <input type="date" id="myDate" name="event-date"/>
+                        </div>
+                        <input type="date" id="Software-install-date" class="datetime-input" style="display:none;" onchange="showDate(this, 'display-Software-install')" />
+                        <div id="display-Software-install" class="display-date"></div>
+                    </div>
+
+                    <!-- Go live. -->
+                    <div class="info-card">
+                        <div class="icon-heading" style="cursor:pointer;" onclick="toggleDatePicker('go-live-date')">
+                        <h3 class="info-card-title" >
+                          <i class="fa-solid fa-calendar-plus"></i>
+                         Go-Live Date/Status
+                        </h3>
+                         <input type="date" id="myDate" name="event-date"/>
+                        </div>
+                        <input type="date" id="go-live-date" class="datetime-input" style="display:none;" onchange="showDate(this, 'display-go-live')" />
+                        <div id="display-go-live" class="display-date"></div>
+                     </div>
+                </div>
+            
+
+<!-- upload button -->
+
+<div class="button-row">
+  <!-- Upload NDA -->
+  <input type="file" id="uploadNDA" accept=".pdf" style="display: none;" onchange="handlePDFUpload(this, 'NDA')">
+  <button class="upload-btn" onclick="document.getElementById('uploadNDA').click()">
+    <i class="fa-solid fa-upload"></i> Upload Paper of NDA
+  </button>
+  
+  <!-- Upload SLA -->
+  <input type="file" id="uploadSLA" accept=".pdf" style="display: none;" onchange="handlePDFUpload(this, 'SLA')">
+  <button class="upload-btn" onclick="document.getElementById('uploadSLA').click()">
+    <i class="fa-solid fa-upload"></i> Upload SLA
+  </button>
+
+  <!-- Upload Invoice -->
+  <input type="file" id="uploadInvoice" accept=".pdf" style="display: none;" onchange="handlePDFUpload(this, 'Invoice')">
+  <button class="upload-btn" onclick="document.getElementById('uploadInvoice').click()">
+    <i class="fa-solid fa-upload"></i> Upload Invoice
+  </button>
+
+</div>
+        
+        <!-- ========== Right Sidebar Content End Here ======== -->
+</div>
+
+<!-- script to display date and time -->
+
+<script>
+    function handlePDFUpload(input, label) {
+    const file = input.files[0];
+    if (file) {
+      if (file.type === "application/pdf") {
+        alert(`${label} file selected: ${file.name}`);
+      } else {
+        alert("Please upload only PDF files.");
+        input.value = "";
+      }
+    }
+  }
+
+//   navigate to project details page,
+  document.getElementById('user-details-btn').addEventListener('click', ()=>{
+    window.location.href = 'center.html';
+  })
+
+// 
+document.querySelector('#company-logo').addEventListener('click', ()=>{
+    window.location.href = 'index.html';
+})
+</script>
+
+</body>
+</html>
