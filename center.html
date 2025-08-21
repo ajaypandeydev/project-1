@@ -12,13 +12,13 @@
 
 </head>
 <body>
-    <div class="main-conatiner">
+    <div class="main-container">
 
         <!-- Left Sidebar -->
         <div class="left-sidebar">
             <div class="img-container">
                 <img src="/Global Projects/img/yello.png" alt="Company img" id="company-logo">
-                <p>Center Details</p>
+                <p>Client name</p>
             </div>
 
             <!-- Nav Button -->
@@ -50,6 +50,15 @@
                         </svg>
                     </button>
                 </div>
+
+                <!-- Log Out Button  -->
+                <div class="logout-btn-container">
+                    <button class="logout-Btn">
+                        <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+  
+                        <div class="text">Logout</div>
+                    </button>
+                </div>
             </div>
         </div>
         <!-- ========= Left Sidebar End Here ========= -->
@@ -61,7 +70,7 @@
             <div class="page-header">
                 <!-- Header -->
                 <header class="header">
-                    <h2>Profile Information <span class="dot">.</span></h2>
+                    <h2>Center Information <span class="dot">.</span></h2>
                 </header> 
             </div>    
 
@@ -73,7 +82,7 @@
                             <i class="fa-solid fa-location-dot"></i>
                             Address
                         </h3>
-                        <span class="value">123 Main Street, New Delhi, India.</span>
+                        <p class="value">123 Main Street, New Delhi, India.</p>
                     </div>
                     <!-- Phone. -->
                     <div class="info-card" data-title="Phone no.">
@@ -108,30 +117,26 @@
                         <p style="color: #C9CDCF; ">click to view details <i class="fa-solid fa-angle-right expand-arrow"></i></p>
                     </div>
                     <!-- Company gst. -->
-                    <div class="info-card" data-title="Comnpany GST">
+                    <div class="info-card" data-title="Company GST">
                         <h3 class="info-card-title" >
                             <i class="fa-regular fa-building"></i>
-                            Comnpany GST
+                            Company GST
                         </h3>
                         <p class="value">22AAAAA0000A1Z5</p>
                     </div>
                     <!-- Bank. -->
-                    <div class="info-card" data-title="Bank Details">
+                    <div class="info-card no-hover" data-title="Bank Details" id="Company-bank-detail-card">
                         <h3 class="info-card-title" >
                             <i class="fa-solid fa-building-columns"></i>
                             Company Bank Account
                         </h3>
-                        <p class="value">
-                            <span>Account Name: ABC Pvt Ltd</span> <br> 
-                            <span>Account Number: 1234567890</span> <br>
-                            <span>IFSC: HDFC0001234</span>
-                        </p>
+                        <p style="color: #C9CDCF; ">click to view details <i class="fa-solid fa-angle-right expand-arrow"></i></p>
                     </div>
 
                 </div>
             
 
-        <!-- Download Buttons -->
+            <!-- Download Buttons -->
             <div class="download-buttons" >
                 <a href="#" id="download-btn-1" class="download-btn">
                     <i class="fa-regular fa-file-pdf"></i>
@@ -171,6 +176,20 @@
   </div>
 </div>
 
+        <!-- Company Bank Details modal box-->
+        <div class="modal" id="bank-details-modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-bank-modal">&times;</span>
+                <h2>Company Bank Details</h2>
+                <div class="bank-modal-body">
+                <p><strong>Bank Name:</strong> HDFC Bank</p>  
+                <p><strong>Account Holder Name:</strong> ABC Pvt Ltd</p>
+                <p><strong>Account Number:</strong> 1234567890</p>
+                <p><strong>IFSC:</strong> HDFC0001234</p>
+                </div>
+            </div>
+        </div>
+
 </div>
 </body>
 </html>
@@ -186,6 +205,7 @@
         window.location.href = 'index.html';
     })
 
+    //----------------- Directors Modal Functionality ----------------------
   const directorsCard = document.getElementById("directors-card");
   const directorsModal = document.getElementById("directors-modal");
   const closeModalBtn = document.getElementById("close-modal");
@@ -204,6 +224,25 @@
       directorsModal.style.display = "none";
     }
   });
+
+  // Company Modal Box 
+  const companyDetailCard= document.querySelector("#Company-bank-detail-card");
+  const companyModal = document.querySelector("#bank-details-modal");
+  const closBtn = document.querySelector("#close-bank-modal");
+
+  companyDetailCard.addEventListener("click", () =>{
+    companyModal.style.display = 'flex';
+  })
+
+  closBtn.addEventListener('click', () =>{
+    companyModal.style.display = 'none'
+  })
+
+  window.addEventListener("click", (e) => {
+    if(e.target === companyModal){
+        companyModal.style.display = 'none';
+    }
+  })
 </script>
 
 
