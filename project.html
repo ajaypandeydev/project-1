@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <div class="main-conatiner">
+    <div class="main-container">
 
         <!-- Left Sidebar -->
         <div class="left-sidebar">
@@ -54,7 +54,7 @@
         </div>
         <!-- ========= Left Sidebar End Here ========= -->
 
-
+        <!-- Right Sidebar -->
         <div class="bg-right-sidebar">
 
             <div class="page-header">
@@ -80,26 +80,17 @@
                             <i class="fa-solid fa-calendar-check"></i>
                             Project Type
                         </h3>
-                        <p class="value">
-                            <select class="dropdown">
-                            <option value="dropdown-box">Inbound</option>
-                            <option value="dropdown-box">Outbound</option>
-                            <option value="dropdown-box">Chat</option>
-                            <option value="dropdown-box">Lead Generation</option>
-                            </select>
-                        </p>
+                        <span class="value">ABCD</span>
                     </div>
                     <!-- Project approval date. -->
                     <div class="info-card">
                         <div class="icon-heading" style="cursor:pointer;" onclick="toggleDatePicker('approval-datetime')">
-                           <h3 class="info-card-title" >
+                          <h3 class="info-card-title" >
                             <i class="fa-solid fa-calendar-check"></i>
                             Project Approval Date
-                           </h3>
-                            <input type="date" id="myDate" name="event-date"/>
+                          </h3>
+                          <span class="value">ABCD</span>
                         </div>
-                        <input type="datetime-local" id="approval-datetime" class="datetime-input" style="display:none;" onchange="showDate(this, 'display-approval-date')">
-                        <div id="display-approval-date" class="display-date"></div>
                     </div>
 
                     <!-- project nda. -->
@@ -109,102 +100,87 @@
                             <i class="fa-solid fa-calendar-check"></i>
                           Project NDA Date
                         </h3>
-                         <input type="date" id="myDate" name="event-date"/>
+                        <span class="value">ABCD</span>
                       </div>
-                    <input type="datetime-local" id="nda-datetime" class="datetime-input" style="display:none;" onchange="showDate(this, 'display-nda-date')"/>
-                    <div id="display-nda-date" class="display-date"></div>
                     </div>
 
                     <!-- Center Visit Date.  -->
                     <div class="info-card">
-                         <div class="icon-heading" style="cursor:pointer;" onclick="toggleDatePicker('center-visit-date')">
-                             <h3 class="info-card-title" >
+                        <div class="icon-heading" style="cursor:pointer;" onclick="toggleDatePicker('center-visit-date')">
+                            <h3 class="info-card-title" >
                             <i class="fa-solid fa-calendar-plus"></i>
                             Center Visit Date
                             </h3>
-                             <input type="date" id="myDate" name="event-date"/>
                             </div>
-                    <input type="date" id="center-visit-date" style="display:none;" onchange="showDate(this, 'display-center-visit')"/>
-                    <div id="display-center-visit" class="display-date"></div>
+                            <span class="value">ABCD</span>
                     </div>
 
                     <!-- SLA Data. -->
                     <div class="info-card">
                         <h3 class="info-card-title" >
-                           <i class="fa-solid fa-calendar-plus"></i>
+                          <i class="fa-solid fa-calendar-plus"></i>
                             SLA Data
                             </h3>
-                        <p class="value"></p>
+                        <span class="value">ABCD</span>
                     </div>
 
                     <!-- Software installation and status. -->
                     <div class="info-card">
-                         <div class="icon-heading" style="cursor:pointer;" onclick="toggleDatePicker('Software-install-date')">
-                             <h3 class="info-card-title" >
+                        <div class="icon-heading" style="cursor:pointer;"  >
+                            <h3 class="info-card-title" >
                             <i class="fa-solid fa-calendar-plus"></i>
                             Software Installation Date and status
                             </h3>
-                             <input type="date" id="myDate" name="event-date"/>
+                            <span class="value">ABCD</span>
                         </div>
-                        <input type="date" id="Software-install-date" class="datetime-input" style="display:none;" onchange="showDate(this, 'display-Software-install')" />
-                        <div id="display-Software-install" class="display-date"></div>
                     </div>
 
-                    <!-- Go live. -->
-                    <div class="info-card">
-                        <div class="icon-heading" style="cursor:pointer;" onclick="toggleDatePicker('go-live-date')">
-                        <h3 class="info-card-title" >
-                          <i class="fa-solid fa-calendar-plus"></i>
-                         Go-Live Date/Status
-                        </h3>
-                         <input type="date" id="myDate" name="event-date"/>
-                        </div>
-                        <input type="date" id="go-live-date" class="datetime-input" style="display:none;" onchange="showDate(this, 'display-go-live')" />
-                        <div id="display-go-live" class="display-date"></div>
-                     </div>
                 </div>
-            
 
-<!-- upload button -->
-
-<div class="button-row">
-  <!-- Upload NDA -->
-  <input type="file" id="uploadNDA" accept=".pdf" style="display: none;" onchange="handlePDFUpload(this, 'NDA')">
-  <button class="upload-btn" onclick="document.getElementById('uploadNDA').click()">
-    <i class="fa-solid fa-upload"></i> Upload Paper of NDA
-  </button>
-  
-  <!-- Upload SLA -->
-  <input type="file" id="uploadSLA" accept=".pdf" style="display: none;" onchange="handlePDFUpload(this, 'SLA')">
-  <button class="upload-btn" onclick="document.getElementById('uploadSLA').click()">
-    <i class="fa-solid fa-upload"></i> Upload SLA
-  </button>
-
-  <!-- Upload Invoice -->
-  <input type="file" id="uploadInvoice" accept=".pdf" style="display: none;" onchange="handlePDFUpload(this, 'Invoice')">
-  <button class="upload-btn" onclick="document.getElementById('uploadInvoice').click()">
-    <i class="fa-solid fa-upload"></i> Upload Invoice
-  </button>
-
-</div>
+                <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-header">
+            <h1>Document Upload</h1>
+            <p>Upload required documents to activate your project</p>
+        </div>
         
-        <!-- ========== Right Sidebar Content End Here ======== -->
+        <!-- Progress Tracker -->
+        <div class="progress-section">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="percentage" id="percentage">0%</div>
+        <p id="statusMessage" class="status-message">Upload NDA, SLA & Invoice to Go Live.</p>
+        
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <div class="file-upload" id="ndaSection">
+                <label for="ndaUpload">📄 Non-Disclosure Agreement (NDA)</label>
+                <input type="file" id="ndaUpload" class="file-input" accept=".pdf" onchange="handleUpload(this, 'NDA')">
+                <div class="upload-status pending" id="ndaStatus">Pending upload</div>
+            </div>
+            
+            <div class="file-upload" id="slaSection">
+                <label for="slaUpload">📋 Service Level Agreement (SLA)</label>
+                <input type="file" placeholder="upload pdf" id="slaUpload" class="file-input" accept=".pdf" onchange="handleUpload(this, 'SLA')">
+                <div class="upload-status pending" id="slaStatus">Pending upload</div>
+            </div>
+            
+            <div class="file-upload" id="invoiceSection">
+                <label for="invoiceUpload">🧾 Invoice Document</label>
+                <input type="file" id="invoiceUpload" class="file-input" accept=".pdf" onchange="handleUpload(this, 'Invoice')">
+                <div class="upload-status pending" id="invoiceStatus">Pending upload</div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+<!-- ========== Right Sidebar Content End Here ======== -->
 </div>
 
-<!-- script to display date and time -->
+</body>
+</html>
 
 <script>
-    function handlePDFUpload(input, label) {
-    const file = input.files[0];
-    if (file) {
-      if (file.type === "application/pdf") {
-        alert(`${label} file selected: ${file.name}`);
-      } else {
-        alert("Please upload only PDF files.");
-        input.value = "";
-      }
-    }
-  }
 
 //   navigate to project details page,
   document.getElementById('user-details-btn').addEventListener('click', ()=>{
@@ -215,7 +191,59 @@
 document.querySelector('#company-logo').addEventListener('click', ()=>{
     window.location.href = 'index.html';
 })
-</script>
 
-</body>
-</html>
+//  progress bar functionality
+let uploadFile = {
+    NDA: false,
+    SLA: false,
+    Invoice: false,
+}
+
+function handleUpload(input, label){
+    const file = input.files[0];
+    if(file){
+        if(file.type === 'application/pdf'){
+            const statusElement =  document.getElementById(label.toLowerCase() + 'Status');
+            const sectionElement = document.getElementById(label.toLowerCase() + 'Section' );
+
+            statusElement.textContent = `${file.name} upload successfully`;
+            statusElement.className = `upload-status success`;
+            sectionElement.className = `file-upload completed`;
+
+            uploadFile[label] = true;
+            updateProgress()
+        } else {
+            alert('Please Upload the pdf file onyl');
+            input.value = ""
+        }
+    }
+}
+
+function updateProgress(){
+    const total = Object.keys(uploadFile).length; // count total files
+    const completed = Object.values(uploadFile).filter(Boolean).length; // count total uploaded files
+    const percentage = (completed / total) * 100;
+
+    document.getElementById("progressBar").style.width = percentage + "%";
+    document.getElementById("percentage").textContent = Math.round(percentage) + "%";
+
+    let message = "";
+    if(completed === 0){
+        message = "Upoad NDA, SLA and Invoice to Go Live";
+    }else if (completed < total) {
+        message = `${completed} of ${total} files upload. keep Going!`;
+    } else {
+        message =  "🎉 All files uploaded! Project is LIVE!";
+        document.getElementById("statusMessage").style.color = "#36AE7C";
+
+        setTimeout(() => {        
+        document.getElementById("progress-container").style.boxShadow = "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset";
+        }, 500)
+    }
+
+    document.getElementById("statusMessage").innerText = message;
+}
+
+updateProgress()
+
+</script>
