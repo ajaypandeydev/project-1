@@ -61,19 +61,29 @@ body { height: 100%; }
       padding: 8px 22px 22px 22px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 14px;
       flex: 1;
       margin: 0;
       overflow: hidden;
+      padding: 1.1rem .5rem;
 }
 
- 
+.logout-btn-container{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 1.3rem;
+  padding: 1.1rem;
+}
+
+/* Logout button */
 .logout-Btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -101,7 +111,7 @@ body { height: 100%; }
   fill: white;
 }
 /* text */
-.text {
+.logout-text {
   position: absolute;
   right: 0%;
   width: 0%;
@@ -124,7 +134,7 @@ body { height: 100%; }
   padding-left: 20px;
 }
 /* hover effect button's text */
-.logout-Btn:hover .text {
+.logout-Btn:hover .logout-text {
   opacity: 1;
   width: 70%;
   transition-duration: .3s;
@@ -135,21 +145,67 @@ body { height: 100%; }
   transform: translate(2px ,2px);
 }
 
-.img-container{
+.sidebar-header-wrapper{
     padding: 1rem .8rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 .img-container img{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     cursor: pointer;
 }
-.img-container p{
+/* .client-title-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.client-title-box span{
   color: #fff;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   padding: 1rem .8rem;
   font-size: 1.1rem;
+} */
+.logout-btn-container .change-password-btn{
+  background-color: rgb(5 150 105);
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255,255,255,0.3),
+    0 2px 0 0 #059669,
+    0 4px 0 0 #047857,
+    0 6px 0 0 #065f46,
+    0 8px 0 0 #064e3b,
+    0 8px 16px 0 rgba(5,150,105,0.5);
+  overflow: hidden;
+  border: none;
+  padding: .2rem .3rem;
+  font-size: 12px;
+  font-weight: 700;
 }
+.change-password-btn::before{
+    content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+.change-password-btn:hover{
+    transform: translateY(4px);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255,255,255,0.3),
+    0 1px 0 0 #059669,
+    0 2px 0 0 #047857,
+    0 3px 0 0 #065f46,
+    0 4px 0 0 #064e3b,
+    0 4px 8px 0 rgba(5,150,105,0.5);
+}
+
 
 /* Responsive for left Siderbar */
 @media screen and (max-width: 768px){
@@ -164,10 +220,10 @@ body { height: 100%; }
     border-right: none;
   }
   .img-container img{
-    width: 200px;
+    width: 12.5rem;
     padding: 0;
   }
-  .img-container p{
+  .sidebar-header-wrapper p{
     font-size: 1.1rem;
   }
 }
@@ -277,7 +333,7 @@ body { height: 100%; }
     /* =============================== RIGHT SIDE CONTENT ======================================== */
   
 .bg-right-sidebar{
-    background-color: #e9eCef; 
+      background-color: #e9eCef; 
       display: grid;
       align-content: start;
       gap: 20px;
@@ -286,6 +342,30 @@ body { height: 100%; }
       height: 100%;
 
       animation: slideToFromRight 1s ease-out forwards;
+
+      position: relative;
+      overflow: hidden;
+}
+
+.bg-right-sidebar::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  width: 40rem;
+  height: 40rem;
+  background: url("./img/yello.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.bg-right-sidebar > *{
+  position: relative;
+  z-index: 1;
 }
 
 .page-header{
@@ -293,7 +373,7 @@ body { height: 100%; }
       justify-content: space-between;
       align-items: end;
       gap: 16px;
-      padding: 12px 4px
+      padding: 12px 4px;
 }
 
 
@@ -422,6 +502,10 @@ body { height: 100%; }
     padding: 0;
     height: auto;
   }
+  .header{
+    width: 90%;
+    padding-left: 0.625rem ;
+  }
   .cards{
     display: grid;
     grid-template-columns: 1fr;
@@ -509,7 +593,6 @@ body { height: 100%; }
 }
 
 .modal-content {
-  background: #fff;
   border-radius: 12px;
   padding: 20px 30px;
   max-width: 500px;
@@ -517,6 +600,7 @@ body { height: 100%; }
   animation: fadeIn 0.3s ease-in-out;
   border: none;
   overflow-y: auto;
+  background: #F1F0E4 !important;
 }
 
 .modal-content h2 {
